@@ -1,8 +1,10 @@
-// src/components/admin/AdminHeader.jsx
 'use client'
+
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+
+const API = process.env.NEXT_PUBLIC_API_URL
 
 export default function AdminHeader() {
   const pathname = usePathname()
@@ -16,11 +18,24 @@ export default function AdminHeader() {
   }, [])
 
   const handleLogout = async () => {
-    await fetch('/laravel-api/api/v1/logout', {
-      method: 'POST',
-      credentials: 'include',
-    })
-    router.push('/admin/login')
+    const token = localStorage.getItem('admin-token')
+
+    try {
+      if (token) {
+        await fetch(`${API}/api/v1/logout`, {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
+          },
+        })
+      }
+    } catch (err) {
+      console.error('Logout error:', err)
+    } finally {
+      localStorage.removeItem('admin-token') // ✅ hapus dari localStorage
+      router.push('/admin/login')
+    }
   }
 
   return (

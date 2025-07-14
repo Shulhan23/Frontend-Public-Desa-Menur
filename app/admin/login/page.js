@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
+const API = process.env.NEXT_PUBLIC_API_URL
+
 export default function LoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
@@ -16,11 +18,12 @@ export default function LoginPage() {
     setError(null)
 
     try {
-      await fetch('/laravel-api/sanctum/csrf-cookie', {
+      // Ambil CSRF cookie jika perlu (bisa tetap pakai ini untuk Sanctum)
+      await fetch(`${API}/sanctum/csrf-cookie`, {
         credentials: 'include',
       })
 
-      const response = await fetch('/laravel-api/api/v1/login', {
+      const response = await fetch(`${API}/api/v1/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,6 +38,12 @@ export default function LoginPage() {
         throw new Error(errorData.message || 'Login gagal')
       }
 
+      const data = await response.json()
+
+      // ✅ Simpan token ke localStorage, bukan cookies
+      localStorage.setItem('admin-token', data.token)
+
+      // Redirect ke dashboard
       router.push('/admin/dashboard')
     } catch (err) {
       setError(err.message)
@@ -47,36 +56,10 @@ export default function LoginPage() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-4">Login Admin</h2>
-
         {error && <p className="text-red-500 mb-3">{error}</p>}
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium">Email</label>
-          <input
-            type="email"
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium">Password</label>
-          <input
-            type="password"
-            className="w-full border border-gray-300 rounded px-3 py-2"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
+        <input type="email" required className="mb-3 w-full" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+        <input type="password" required className="mb-4 w-full" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+        <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white py-2 rounded">
           {loading ? 'Memproses...' : 'Login'}
         </button>
       </form>
