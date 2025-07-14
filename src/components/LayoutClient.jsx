@@ -1,3 +1,4 @@
+// src/components/LayoutClient.jsx
 'use client'
 import Header from './header'
 import Footer from './footer'

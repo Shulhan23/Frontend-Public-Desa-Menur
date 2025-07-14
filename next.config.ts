@@ -1,5 +1,3 @@
-import type { NextConfig } from 'next'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
@@ -10,7 +8,9 @@ const nextConfig = {
       },
     ]
   },
-};
+  experimental: {
+    appDir: true,
+  },
+}
 
-export default nextConfig;
-
+export default nextConfig

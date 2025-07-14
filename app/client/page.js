@@ -1,5 +1,5 @@
 'use client'
-import Image from 'next/image'
+
 import dynamic from 'next/dynamic'
 
 const PetaDesa = dynamic(() => import('@/components/PetaDesa'), { ssr: false })
@@ -24,10 +24,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* INFO BOXES */}
+      {/* INFO BOXES (Placeholder) */}
       <section className="py-12 bg-white">
         <div className="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-6">
-          {/* ... */}
+          {/* Tambahkan komponen atau konten informasi di sini */}
         </div>
       </section>
 

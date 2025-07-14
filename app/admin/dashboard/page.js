@@ -1,68 +1,50 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function AdminDashboard() {
-  const router = useRouter();
-  const [admin, setAdmin] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const router = useRouter()
+  const [admin, setAdmin] = useState(null)
+  const [loading, setLoading] = useState(true)
 
-  // Cek apakah user sudah login (berbasis cookie session Sanctum)
   useEffect(() => {
     const fetchAdmin = async () => {
       try {
-        const res = await fetch('http://localhost:8000/api/v1/berita', {
+        const res = await fetch('/laravel-api/api/v1/berita', {
           credentials: 'include',
-        });
+        })
 
         if (res.status === 401) {
-          router.push('/admin/login'); // redirect kalau belum login
+          router.push('/admin/login')
         } else {
-          const data = await res.json();
-          setAdmin(data); // bisa ubah ini jika kamu punya endpoint profile admin
+          const data = await res.json()
+          setAdmin(data)
         }
-      } catch (err) {
-        router.push('/admin/login');
+      } catch {
+        router.push('/admin/login')
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchAdmin();
-  }, []);
-
-  const handleLogout = async () => {
-    await fetch('http://localhost:8000/api/v1/logout', {
-      method: 'POST',
-      credentials: 'include',
-    });
-
-    router.push('/admin/login');
-  };
+    fetchAdmin()
+  }, [])
 
   if (loading) {
-    return <div className="p-6">Memuat data admin...</div>;
+    return <div className="p-6">Memuat data admin...</div>
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow p-4 flex justify-between items-center">
-        <h1 className="text-xl font-bold">Dashboard Admin</h1>
-        <button
-          onClick={handleLogout}
-          className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-        >
-          Logout
-        </button>
-      </header>
-
-      {/* Konten */}
-      <main className="p-6">
-        <p className="text-lg">Selamat datang di halaman admin!</p>
-        <p className="text-gray-600 mt-2">Anda sekarang sudah login.</p>
-      </main>
-    </div>
-  );
+    <section className="p-6 max-w-5xl mx-auto">
+      <h2 className="text-2xl font-bold mb-4">Dashboard Admin</h2>
+      <p className="text-gray-700 mb-2">Selamat datang di halaman admin Desa Menur!</p>
+      <div className="bg-white p-4 rounded shadow">
+        <h3 className="font-semibold mb-2">Contoh Data</h3>
+        <pre className="bg-gray-100 p-3 rounded text-xs overflow-auto">
+          {JSON.stringify(admin, null, 2)}
+        </pre>
+      </div>
+    </section>
+  )
 }

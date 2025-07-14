@@ -1,0 +1,1 @@
+// app/(admin)/berita/page.js

@@ -1,3 +1,4 @@
+// src/components/header.js
 'use client'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -22,8 +23,7 @@ export default function Header() {
     { label: 'Profil', href: '/profil' },
     { label: 'Struktur', href: '/struktur' },
     { label: 'Administrasi', href: '/administrasi' },
-    { label: 'Berita', href: '/berita' },
-    { label: 'Login', href: '/login' }
+    { label: 'Berita', href: '/berita' }
   ]
 
   return (

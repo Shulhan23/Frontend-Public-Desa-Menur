@@ -16,28 +16,25 @@ export default function LoginPage() {
     setError(null)
 
     try {
-      // 1. Ambil XSRF token dari backend
       await fetch('/laravel-api/sanctum/csrf-cookie', {
         credentials: 'include',
-      })    
+      })
 
-      // 2. Kirim data login ke backend
-        const response = await fetch('/laravel-api/api/v1/login', {
+      const response = await fetch('/laravel-api/api/v1/login', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
         },
         credentials: 'include',
         body: JSON.stringify({ email, password }),
-        });
+      })
 
       if (!response.ok) {
         const errorData = await response.json()
         throw new Error(errorData.message || 'Login gagal')
       }
 
-      // 3. Login berhasil: redirect ke dashboard admin
       router.push('/admin/dashboard')
     } catch (err) {
       setError(err.message)

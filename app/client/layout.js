@@ -1,4 +1,3 @@
-// app/layout.js
 import '../styles/globals.css'
 import LayoutClient from '@/components/LayoutClient'
 
@@ -7,7 +6,7 @@ export const metadata = {
   description: 'Website Resmi Desa Menur',
 }
 
-export default function RootLayout({ children }) {
+export default function ClientLayout({ children }) {
   return (
     <html lang="id">
       <body>
