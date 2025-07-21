@@ -21,7 +21,7 @@ export default async function BeritaDetail({ params }) {
 
       {berita.gambar && (
         <img
-          src={`https://api.desamenur.com/storage/${berita.gambar}`}
+          src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
           alt={berita.judul}
           className="w-full h-96 object-cover rounded-md mb-6"
         />
