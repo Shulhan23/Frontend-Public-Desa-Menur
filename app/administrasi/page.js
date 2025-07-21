@@ -54,12 +54,12 @@ export default function LamanAdministrasi() {
   ]
 
   const dataPBB = [
-    { year: '2019', jumlah: 270 },
-    { year: '2020', jumlah: 270 },
-    { year: '2021', jumlah: 270 },
-    { year: '2022', jumlah: 270 },
-    { year: '2023', jumlah: 250 },
-    { year: '2024', jumlah: 240 },
+    { year: '2019', jumlah: 267 },
+    { year: '2020', jumlah: 266 },
+    { year: '2021', jumlah: 266 },
+    { year: '2022', jumlah: 267 },
+    { year: '2023', jumlah: 243 },
+    { year: '2024', jumlah: 236 },
   ]
 
   const Box = ({ children, className = '' }) => (
