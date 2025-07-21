@@ -17,8 +17,11 @@ const merriweather = Merriweather({
 })
 
 export const metadata = {
-  title: 'Desa Menur',
-  description: 'Website Resmi Desa Menur',
+  title: 'Website Resmi Desa Menur',
+  description: 'Informasi resmi, berita desa, dan layanan publik Desa Menur.',
+  keywords: ['Desa Menur', 'Pemerintahan Desa', 'Website Resmi'],
+  authors: [{ name: 'Desa Menur' }],
+  robots: 'index, follow',
 }
 
 export default function RootLayout({ children }) {
@@ -32,13 +35,5 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   )
-}
-
-export const metadata = {
-  title: 'Website Resmi Desa Menur',
-  description: 'Informasi resmi, berita desa, dan layanan publik Desa Menur.',
-  keywords: ['Desa Menur', 'Pemerintahan Desa', 'Website Resmi'],
-  authors: [{ name: 'Desa Menur' }],
-  robots: 'index, follow',
 }
 
