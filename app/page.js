@@ -69,6 +69,7 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <MapPinned className="w-12 h-12 mx-auto text-green-600 mb-4" />
+              href="/profil"
               <h3 className="text-xl font-semibold mb-2 font-sans text-gray-800">Wilayah Desa</h3>
               <p className="text-gray-700 font-serif">
                 Informasi geografi dan batas wilayah Desa Menur.
