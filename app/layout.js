@@ -33,3 +33,12 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
+
+export const metadata = {
+  title: 'Website Resmi Desa Menur',
+  description: 'Informasi resmi, berita desa, dan layanan publik Desa Menur.',
+  keywords: ['Desa Menur', 'Pemerintahan Desa', 'Website Resmi'],
+  authors: [{ name: 'Desa Menur' }],
+  robots: 'index, follow',
+}
+
