@@ -17,7 +17,7 @@ export default function HomePage() {
             muted
             className="absolute inset-0 w-full h-full object-cover"
           >
-          <source src="/assets/banner website menur.mp4" type="video/mp4" />
+          <source src="/assets/banner-web.mp4" type="video/mp4" />
           Browser kamu tidak mendukung pemutaran video.
         </video>
 
