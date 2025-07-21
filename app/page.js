@@ -43,7 +43,7 @@ export default function HomePage() {
 
       {/* INFO BOXES */}
       <section className="py-16" id="profil-desa">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-20">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-start justify-between gap-12">
           {/* TEKS DI KIRI */}
           <motion.div
             className="md:w-1/2 flex flex-col justify-center h-auto mt-12 md:mt-20"
@@ -62,7 +62,7 @@ export default function HomePage() {
           <div className="md:w-1/2 flex flex-col items-center space-y-6">
             {/* Atas Tengah */}
             <motion.div
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-64 text-center"
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -78,7 +78,7 @@ export default function HomePage() {
             {/* Bawah Kiri dan Kanan */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <motion.div
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-64 text-center"
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.7 }}
@@ -92,7 +92,7 @@ export default function HomePage() {
               </motion.div>
 
               <motion.div
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-64 text-center"
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
@@ -113,9 +113,9 @@ export default function HomePage() {
       <section className="px-4 pb-24" id="peta-desa">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 font-sans text-gray-800">Peta Interaktif Desa Menur</h2>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
+          <div className="rounded-2xl overflow-hidden shadow-lg min-h-[300px] sm:min-h-[400px]">
             <PetaDesa />
-          </div>
+          </div> 
         </div>
       </section>
     </main>
