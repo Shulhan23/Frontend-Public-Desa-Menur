@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { Newspaper, MapPinned, Users2 } from 'lucide-react'
 import { motion } from 'framer-motion'
