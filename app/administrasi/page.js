@@ -216,21 +216,36 @@ const dataPBB = [
     </BarChart>
   </ResponsiveContainer>
 </section>
+
 <section className="space-y-4">
-  <div className="flex items-center gap-2 text-indigo-700 justify-center">
-    <FileText size={28} />
-    <h2 className="text-2xl font-semibold">Data Pajak Bumi Bangunan (PBB)</h2>
+  <div className="flex flex-col items-center gap-1 text-indigo-700 text-center">
+    <div className="flex items-center gap-2">
+      <FileText size={28} />
+      <h2 className="text-2xl font-semibold">Data Pajak Bumi Bangunan (PBB)</h2>
+    </div>
+    <p className="text-sm text-gray-500">(dalam ratus juta rupiah)</p>
   </div>
+
   <ResponsiveContainer width="100%" height={300}>
     <BarChart data={dataPBB}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="year" />
-      <YAxis />
-      <Tooltip />
+      <YAxis
+        tickFormatter={(value) => `${value}`} // Atau `${value} jt`
+        label={{
+          value: 'PBB (ratus juta)',
+          angle: -90,
+          position: 'insideLeft',
+          fill: '#6b7280',
+          fontSize: 12,
+        }}
+      />
+      <Tooltip formatter={(value) => `${value} ratus juta`} />
       <Bar dataKey="jumlah" fill="#818cf8" />
     </BarChart>
   </ResponsiveContainer>
 </section>
+
     </main>
   )
 }
