@@ -12,7 +12,6 @@ import {
 import {
   MapPin,
   Users,
-  User2,
   Home,
   Landmark,
   FileText,
