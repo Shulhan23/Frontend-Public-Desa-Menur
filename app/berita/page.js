@@ -40,7 +40,7 @@ export default async function BeritaPage() {
           >
             {berita.gambar && (
               <img
-                src={`https://api.desamenur.com/storage/${berita.gambar}`}
+                src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
                 alt={berita.judul}
                 className="w-full h-56 object-cover"
               />
