@@ -1,7 +1,6 @@
 'use client'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import { MapPinned, Users2 } from 'lucide-react'
+import { MapPinned } from 'lucide-react'
 
 const PetaDesa = dynamic(() => import('@/components/public/PetaDesa'), { ssr: false })
 
