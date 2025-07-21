@@ -27,6 +27,38 @@ export default function LamanAdministrasi() {
     { name: 'Laki-Laki', jumlah: 2394 },
     { name: 'Perempuan', jumlah: 2298 },
   ]
+  const dataAgama = [
+  { name: 'Islam', jumlah: 4691 },
+  { name: 'Kristen', jumlah: 1 },
+]
+
+const dataPekerjaan = [
+  { name: 'Pedagang', jumlah: 59 },
+  { name: 'Pengrajin', jumlah: 186 },
+  { name: 'PNS', jumlah: 25 },
+  { name: 'Montir', jumlah: 10 },
+  { name: 'Karyawan Swasta', jumlah: 725 },
+  { name: 'Peternak', jumlah: 93 },
+  { name: 'Buruh Tani', jumlah: 241 },
+  { name: 'Petani', jumlah: 659 },
+  { name: 'TNI', jumlah: 5 },
+  { name: 'Polri', jumlah: 6 },
+  { name: 'Penjahit', jumlah: 12 },
+  { name: 'Sopir', jumlah: 8 },
+  { name: 'Tukang Kayu', jumlah: 35 },
+  { name: 'Tukang Batu', jumlah: 212 },
+  { name: 'Guru Swasta', jumlah: 50 },
+  { name: 'PPPK', jumlah: 8 },
+]
+
+const dataPBB = [
+  { year: '2019', jumlah: 270 },
+  { year: '2020', jumlah: 270 },
+  { year: '2021', jumlah: 270 },
+  { year: '2022', jumlah: 270 },
+  { year: '2023', jumlah: 250 },
+  { year: '2024', jumlah: 240 },
+]
 
   const Box = ({ children, className = '' }) => (
     <div className={`bg-lime-200 text-center rounded-2xl p-5 shadow font-medium text-gray-800 ${className}`}>
@@ -143,6 +175,62 @@ export default function LamanAdministrasi() {
           </div>
         </div>
       </section>
+
+<section className="space-y-4">
+  <div className="flex items-center gap-2 text-purple-700 justify-center">
+    <Landmark size={28} />
+    <h2 className="text-2xl font-semibold">Jumlah Penduduk Berdasarkan Agama</h2>
+  </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <ResponsiveContainer width="100%" height={250}>
+      <BarChart data={dataAgama}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey="jumlah" fill="#a3e635" />
+      </BarChart>
+    </ResponsiveContainer>
+    <div className="space-y-4">
+      {dataAgama.map((item) => (
+        <Box key={item.name}>
+          {item.name}: {item.jumlah}
+        </Box>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section className="space-y-4">
+  <div className="flex items-center gap-2 text-rose-700 justify-center">
+    <Users size={28} />
+    <h2 className="text-2xl font-semibold">Jumlah Penduduk Berdasarkan Pekerjaan</h2>
+  </div>
+  <ResponsiveContainer width="100%" height={400}>
+    <BarChart data={dataPekerjaan}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" angle={-45} textAnchor="end" height={100} />
+      <YAxis />
+      <Tooltip />
+      <Bar dataKey="jumlah" fill="#f87171" />
+    </BarChart>
+  </ResponsiveContainer>
+</section>
+<section className="space-y-4">
+  <div className="flex items-center gap-2 text-indigo-700 justify-center">
+    <FileText size={28} />
+    <h2 className="text-2xl font-semibold">Data Pajak Bumi Bangunan (PBB)</h2>
+  </div>
+  <ResponsiveContainer width="100%" height={300}>
+    <BarChart data={dataPBB}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="year" />
+      <YAxis />
+      <Tooltip />
+      <Bar dataKey="jumlah" fill="#818cf8" />
+    </BarChart>
+  </ResponsiveContainer>
+</section>
     </main>
   )
 }
