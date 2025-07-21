@@ -226,7 +226,7 @@ export default function LamanAdministrasi() {
             <FileText size={28} />
             <h2 className="text-2xl font-bold">Data Pajak Bumi Bangunan (PBB)</h2>
           </div>
-          <p className="text-sm text-gray-500">(dalam ratus juta rupiah)</p>
+          <p className="text-sm text-gray-500">(dalam juta rupiah)</p>
         </div>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={dataPBB}>
@@ -235,14 +235,14 @@ export default function LamanAdministrasi() {
             <YAxis
               tickFormatter={(value) => `${value}`}
               label={{
-                value: 'PBB (ratus juta)',
+                value: 'PBB (juta)',
                 angle: -90,
                 position: 'insideLeft',
                 fill: '#6b7280',
                 fontSize: 12,
               }}
             />
-            <Tooltip formatter={(value) => `${value} ratus juta`} />
+            <Tooltip formatter={(value) => `${value} juta`} />
             <Legend />
             <Bar dataKey="jumlah" fill="#818cf8" />
           </BarChart>
