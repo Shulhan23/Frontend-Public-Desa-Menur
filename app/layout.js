@@ -19,7 +19,7 @@ const merriweather = Merriweather({
 export const metadata = {
   title: 'Website Resmi Desa Menur',
     icons: {
-    icon: '/assets/favicon.ico', // otomatis cari dari public/favicon.ico
+    icon: '/assets/logo-desa.png', // otomatis cari dari public/favicon.ico
   },
   description: 'Informasi resmi, berita desa, dan layanan publik Desa Menur.',
   keywords: ['Desa Menur', 'Pemerintahan Desa', 'Website Resmi'],
