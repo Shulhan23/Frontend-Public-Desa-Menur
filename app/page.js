@@ -1,5 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { Newspaper, MapPinned, Users2 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -61,24 +62,27 @@ export default function HomePage() {
           {/* PIRAMIDA */}
           <div className="md:w-1/2 flex flex-col items-center space-y-6">
             {/* Atas Tengah */}
-            <motion.div
-              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              viewport={{ once: true }}
-            >
-              <MapPinned className="w-12 h-12 mx-auto text-green-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2 font-sans text-gray-800">Wilayah Desa</h3>
-              <p className="text-gray-700 font-serif">
-                Informasi geografi dan batas wilayah Desa Menur.
-              </p>
-            </motion.div>
+            <Link href="/profil" className="w-full sm:w-64">
+              <motion.div
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition text-center cursor-pointer"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+              >
+                <MapPinned className="w-12 h-12 mx-auto text-green-600 mb-4" />
+                <h3 className="text-xl font-semibold mb-2 font-sans text-gray-800">Wilayah Desa</h3>
+                <p className="text-gray-700 font-serif">
+                  Informasi geografi dan batas wilayah Desa Menur.
+                </p>
+              </motion.div>
+            </Link>
 
             {/* Bawah Kiri dan Kanan */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/administrasi" className="w-full sm:w-64">
               <motion.div
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition text-center cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.7 }}
@@ -90,9 +94,11 @@ export default function HomePage() {
                   Jumlah, statistik, dan info kependudukan terkini.
                 </p>
               </motion.div>
-
+            </Link>
+                
+            <Link href="/berita" className="w-full sm:w-64">
               <motion.div
-                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition w-full sm:w-64 text-center"
+                className="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition text-center cursor-pointer"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.7 }}
@@ -104,6 +110,7 @@ export default function HomePage() {
                   Update kegiatan dan informasi resmi dari desa.
                 </p>
               </motion.div>
+            </Link>
             </div>
           </div>
         </div>
