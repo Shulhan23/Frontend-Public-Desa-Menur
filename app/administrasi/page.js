@@ -283,14 +283,14 @@ export default function LamanAdministrasi() {
               </div>
     
               {/* KOMODITAS */}
-              <div className="bg-green-500 text-white rounded-2xl p-6 shadow-md">
-                <h2 className="text-xl font-bold mb-3">KOMODITAS :</h2>
-                <ul className="list-disc list-inside space-y-2 text-sm">
-                  {komoditas.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </div>
+            <div className="bg-green-500 text-white rounded-2xl p-6 shadow-md">
+              <h2 className="text-xl font-bold mb-3">KOMODITAS :</h2>
+              <ul className="list-disc list-outside pl-4 space-y-2 text-sm leading-relaxed">
+                {komoditas.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
             </div>
           </section>
 
