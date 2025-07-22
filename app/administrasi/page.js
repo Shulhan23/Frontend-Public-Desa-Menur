@@ -259,6 +259,34 @@ export default function LamanAdministrasi() {
         </ResponsiveContainer>
       </section>
 
+     <section className="max-w-5xl mx-auto">
+            <h1 className="text-3xl font-bold text-center text-green-800 mb-8">
+              Pertanian Desa Menur
+            </h1>
+    
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* KELOMPOK TANI */}
+              <div className="bg-green-500 text-white rounded-2xl p-6 shadow-md">
+                <h2 className="text-xl font-bold mb-3">4 KELOMPOK TANI :</h2>
+                <ul className="list-disc list-inside space-y-1">
+                  {kelompokTani.map((nama, idx) => (
+                    <li key={idx} className="font-semibold">{nama}</li>
+                  ))}
+                </ul>
+              </div>
+    
+              {/* KOMODITAS */}
+              <div className="bg-green-500 text-white rounded-2xl p-6 shadow-md">
+                <h2 className="text-xl font-bold mb-3">KOMODITAS :</h2>
+                <ul className="list-disc list-inside space-y-2 text-sm">
+                  {komoditas.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+
       {/* PERTANIAN */}
       <section className="space-y-6">
         <div className="text-center text-green-700">
