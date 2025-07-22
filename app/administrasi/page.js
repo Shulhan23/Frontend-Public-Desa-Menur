@@ -72,6 +72,13 @@ export default function LamanAdministrasi() {
     { jenis: 'Peternak Kambing', jumlah: 11 },
   ]
 
+    const kelompokTani = ['Sri Rejeki', 'Rojosari', 'Gemah Ripah', 'Sidomulyo']
+    const komoditas = [
+      'padi, jagung',
+      'terong, cabe, bawang merah, bayem, kacang panjang, pare, kangkung, daun glandir',
+      'pisang bibit demak, pisang raja bulu, pisang raja tonto',
+    ]
+
   const Box = ({ children, className = '' }) => (
     <div className={`bg-lime-100 text-center rounded-xl p-4 shadow-inner font-medium text-gray-800 ${className}`}>
       {children}
