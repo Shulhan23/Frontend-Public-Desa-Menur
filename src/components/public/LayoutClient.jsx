@@ -8,12 +8,15 @@ export default function LayoutClient({ children }) {
   const isHome = pathname === '/'
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <div className={`${!isHome ? 'pt-[80px]' : ''}`}>
+
+      {/* Konten utama */}
+      <main className={`flex-grow ${!isHome ? 'pt-[80px]' : ''}`}>
         {children}
-      </div>
+      </main>
+
       <Footer />
-    </>
+    </div>
   )
 }
