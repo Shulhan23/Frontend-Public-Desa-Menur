@@ -62,6 +62,16 @@ export default function LamanAdministrasi() {
     { year: '2024', jumlah: 236 },
   ]
 
+  const dataPertanian = [
+    { name: 'Padi', luas: 115, hasil: '3–6 Ton/Ha' },
+    { name: 'Jagung', luas: 100, hasil: '5–7 Ton/Ha' },
+  ]
+  
+  const dataPeternakan = [
+    { jenis: 'Peternak Sapi', jumlah: 22 },
+    { jenis: 'Peternak Kambing', jumlah: 11 },
+  ]
+
   const Box = ({ children, className = '' }) => (
     <div className={`bg-lime-100 text-center rounded-xl p-4 shadow-inner font-medium text-gray-800 ${className}`}>
       {children}
@@ -247,6 +257,71 @@ export default function LamanAdministrasi() {
             <Bar dataKey="jumlah" fill="#818cf8" />
           </BarChart>
         </ResponsiveContainer>
+      </section>
+
+      {/* PERTANIAN */}
+      <section className="space-y-6">
+        <div className="text-center text-green-700">
+          <h2 className="text-2xl font-bold">Data Pertanian</h2>
+        </div>
+
+        {/* LUAS LAHAN */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          {dataPertanian.map((item) => (
+            <Box key={item.name} className="bg-green-200">
+              <p className="text-3xl font-bold">{item.luas} Ha</p>
+              <p className="text-sm text-gray-700">Luas Lahan Tanam {item.name}</p>
+            </Box>
+          ))}
+        </div>
+
+        {/* HASIL PANEN */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          {dataPertanian.map((item) => (
+            <Box key={item.name + '-hasil'} className="bg-green-300">
+              <p className="text-lg font-bold">{item.hasil}</p>
+              <p className="text-sm text-gray-700">Hasil Panen {item.name} per Tahun</p>
+              <p className="text-xs text-gray-500">Menurut BPS</p>
+            </Box>
+          ))}
+        </div>
+
+        {/* JUMLAH PETANI */}
+        <div className="flex justify-center">
+          <Box className="bg-green-400 text-3xl font-bold">
+            659
+            <div className="text-base font-normal">Jumlah Petani di Desa Menur</div>
+          </Box>
+        </div>
+      </section>
+
+      {/* PETERNAKAN */}
+      <section className="space-y-6">
+        <div className="text-center text-amber-700">
+          <h2 className="text-2xl font-bold">Data Peternakan</h2>
+        </div>
+
+        {/* CHART PETERNAKAN */}
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={dataPeternakan}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="jenis" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="jumlah" fill="#fbbf24" />
+          </BarChart>
+        </ResponsiveContainer>
+
+        {/* JUMLAH PETERNAK */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-center">
+          {dataPeternakan.map((item) => (
+            <Box key={item.jenis} className="bg-yellow-100 text-xl">
+              <p className="font-bold">{item.jumlah}</p>
+              <p className="text-sm text-gray-700">Warga {item.jenis.toUpperCase()}</p>
+            </Box>
+          ))}
+        </div>
       </section>
 
     </main>
