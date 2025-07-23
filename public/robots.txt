@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 User-agent: *
 Allow: /
 Sitemap: https://desamenur.com/sitemap.xml
+=======
+User-agent: *
+Allow: /
+Sitemap: https://desamenur.com/sitemap.xml
+>>>>>>> 5065748d3b1f46838861a8d86a4a59d114565b81
