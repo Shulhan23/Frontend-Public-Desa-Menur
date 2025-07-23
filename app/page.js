@@ -160,7 +160,7 @@ export default function HomePage() {
       </a>
 
       {/* Card 3 */}
-      <a href="/potensi/kerajinan" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+      <a href="/potensi/bengkel-spm" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
         <img
           src="/assets/potensi/kerajinan.jpg"
           alt="Kerajinan"
@@ -170,7 +170,7 @@ export default function HomePage() {
       </a>
 
       {/* Card 4 */}
-      <a href="/potensi/konveksi" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+      <a href="/potensi/bengkel-r4" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
         <img
           src="/assets/potensi/pakaian.jpg"
           alt="Pakaian"
