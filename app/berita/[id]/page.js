@@ -27,7 +27,7 @@ export default async function BeritaDetail({ params }) {
         />
       )}
 
-      <div className="text-gray-800 text-base leading-relaxed whitespace-pre-line">
+      <div className="text-gray-800 text-base leading-relaxed whitespace-pre-line text-justify">
         {berita.isi}
       </div>
     </div>
