@@ -15,7 +15,7 @@ export default function BengkelR4Page() {
       <h1 className="text-3xl font-bold text-center mb-8">Bengkel Mobil (Roda 4)</h1>
 
       <Image
-        src="/images/potensi/bengkel-r4.jpg"
+        src="/assets/potensi/bengkel-r4.jpg"
         alt="Bengkel Mobil"
         width={800}
         height={400}
