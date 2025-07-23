@@ -1,4 +1,4 @@
-import Link from 'next/link'
+ximport Link from 'next/link'
 
 // Fungsi untuk memformat tanggal ke format Indonesia
 function formatTanggal(dateString) {
@@ -26,10 +26,7 @@ export default async function BeritaPage() {
         Berita Desa
       </h1>
 
-      <p
-        className="text-gray-700 text-base mb-10 max-w-3xl mx-auto leading-relaxed"
-        style={{ textAlign: 'justify' }}
-      >
+      <p className="text-gray-700 text-base mb-10 leading-relaxed" style={{ textAlign: 'justify' }}>
         Temukan informasi terbaru seputar kegiatan, pengumuman resmi, dan perkembangan terkini di Desa Menur. 
         Semua berita disampaikan langsung oleh Pemerintah Desa sebagai bentuk transparansi dan keterbukaan informasi bagi masyarakat.
       </p>
