@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Bengkel SPM - Desa Menur',
   description: 'Daftar Bengkel Sepeda Motor di Desa Menur',

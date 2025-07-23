@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Bengkel Roda 4 - Desa Menur',
   description: 'Daftar Bengkel Mobil (Roda 4) di Desa Menur',

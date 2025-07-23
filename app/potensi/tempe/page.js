@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export const metadata = {
   title: 'Pengrajin Tempe - Desa Menur',
   description: 'Daftar Pengrajin Tempe di Desa Menur',
