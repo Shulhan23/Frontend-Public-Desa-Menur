@@ -51,7 +51,7 @@ export default function KulinerPage() {
           <div
             key={index}
             className="bg-yellow-50 border border-yellow-200 shadow-md p-5 rounded-xl transition duration-200 hover:shadow-xl"
-          >
+          > 
             <div className="flex items-start gap-3">
               <ChevronRight className="text-green-700 mt-1" />
               <p className="text-gray-800 font-medium">{item}</p>
