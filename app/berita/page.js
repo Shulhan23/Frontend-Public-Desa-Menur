@@ -26,7 +26,7 @@ export default async function BeritaPage() {
         Berita Desa
       </h1>
 
-      <p className="text-gray-700 text-base mb-10 max-w-3xl">
+      <p className="text-gray-700 text-base mb-10 max-w-3xl justify-center">
         Temukan informasi terbaru seputar kegiatan, pengumuman resmi, dan perkembangan terkini di Desa Menur. 
         Semua berita disampaikan langsung oleh Pemerintah Desa sebagai bentuk transparansi dan keterbukaan informasi bagi masyarakat.
       </p>
