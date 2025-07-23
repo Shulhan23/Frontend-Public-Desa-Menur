@@ -125,6 +125,62 @@ export default function HomePage() {
           </div> 
         </div>
       </section>
+<section className="bg-gray-50 py-20" id="potensi-desa">
+  <div className="max-w-6xl mx-auto px-4">
+    {/* Header */}
+    <div className="flex items-center justify-between mb-12">
+      <div>
+        <h2 className="text-4xl font-bold text-black-600 font-sans mb-2">UMKM Desa</h2>
+        <p className="text-gray-700 font-serif max-w-xl">
+          Berbagai potensi usaha mikro dan kecil yang tumbuh di Desa Menur, mendukung ekonomi lokal dengan semangat gotong royong.
+        </p>
+      </div>
+    </div>
+
+    {/* Potensi Cards */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {/* Card 1 */}
+      <a href="/potensi/kuliner" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+        <img
+          src="/assets/potensi/pariwisata.jpg"
+          alt="Kuliner"
+          className="rounded-lg object-cover w-full h-48 mb-4"
+        />
+        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Kuliner</h3>
+      </a>
+
+      {/* Card 2 */}
+      <a href="/potensi/tempe" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+        <img
+          src="/assets/potensi/perikanan.jpg"
+          alt="Tempe"
+          className="rounded-lg object-cover w-full h-48 mb-4"
+        />
+        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Tempe</h3>
+      </a>
+
+      {/* Card 3 */}
+      <a href="/potensi/kerajinan" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+        <img
+          src="/assets/potensi/kerajinan.jpg"
+          alt="Kerajinan"
+          className="rounded-lg object-cover w-full h-48 mb-4"
+        />
+        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel SPM</h3>
+      </a>
+
+      {/* Card 4 */}
+      <a href="/potensi/konveksi" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+        <img
+          src="/assets/potensi/pakaian.jpg"
+          alt="Pakaian"
+          className="rounded-lg object-cover w-full h-48 mb-4"
+        />
+        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengekl R4</h3>
+      </a>
+    </div>
+  </div>
+</section>
     </main>
   )
 }
