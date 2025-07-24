@@ -19,13 +19,13 @@ export default async function BeritaDetail({ params }) {
         {berita.judul}
       </h1>
 
-      {berita.gambar && (
-        <img
-          src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
-          alt={berita.judul}
-          className="w-full h-96 object-cover rounded-md mb-6"
-        />
-      )}
+        {berita.gambar && (
+          <img
+            src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
+            alt={berita.judul}
+            className="w-full max-h-[500px] object-cover object-center rounded-md mb-6"
+          />
+        )}
 
       <div className="text-gray-800 text-base leading-relaxed whitespace-pre-line text-justify">
         {berita.isi}
