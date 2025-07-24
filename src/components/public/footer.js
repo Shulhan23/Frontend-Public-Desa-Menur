@@ -25,7 +25,7 @@ export default function Footer() {
         {/* Kolom 2 - Kontak */}
         <div className="flex flex-col space-y-1">
           <h4 className="text-yellow-300 font-bold text-xs">Hubungi Kami</h4>
-          <p className="text-xs">📞 0821-2345-6789</p>
+          <p className="text-xs">📞 0821-</p>
           <p className="text-xs">✉ desa.menur@demakkab.go.id</p>
           <p className="text-xs">Jam Kerja: Senin - Jumat, 08:00 - 16:00</p>
         </div>
