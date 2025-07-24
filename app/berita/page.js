@@ -42,7 +42,7 @@ export default async function BeritaPage() {
               <img
                 src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
                 alt={berita.judul}
-                className="w-full h-56 object-cover"
+                className="w-full max-h-64 object-cover object-center"
               />
             )}
             <div className="p-5">
