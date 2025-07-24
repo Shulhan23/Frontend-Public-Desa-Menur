@@ -1,4 +1,4 @@
-ximport Link from 'next/link'
+import Link from 'next/link'
 
 // Fungsi untuk memformat tanggal ke format Indonesia
 function formatTanggal(dateString) {
