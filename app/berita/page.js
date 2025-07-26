@@ -26,7 +26,7 @@ export default async function BeritaPage() {
         Berita Desa
       </h1>
 
-      <p className="text-gray-700 text-base mb-10 max-w-3xl">
+      <p className="text-gray-700 text-base mb-10 leading-relaxed" style={{ textAlign: 'justify' }}>
         Temukan informasi terbaru seputar kegiatan, pengumuman resmi, dan perkembangan terkini di Desa Menur. 
         Semua berita disampaikan langsung oleh Pemerintah Desa sebagai bentuk transparansi dan keterbukaan informasi bagi masyarakat.
       </p>
@@ -42,7 +42,7 @@ export default async function BeritaPage() {
               <img
                 src={`https://api.desamenur.com/storage/berita/${berita.gambar}`}
                 alt={berita.judul}
-                className="w-full h-56 object-cover"
+                className="w-full max-h-64 object-cover object-center"
               />
             )}
             <div className="p-5">
