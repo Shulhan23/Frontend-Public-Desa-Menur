@@ -32,7 +32,7 @@ export default function Footer() {
         {/* Kolom 3 - Nomor Penting */}
           <div className="flex flex-col space-y-1">
             <h4 className="text-purple-600 font-bold text-xs">Motto Desa</h4>
-            <p className="text-xs italic text-gray-700">"Membangun bersama, menuju desa mandiri dan sejahtera."</p>
+            <p className="text-xs italic text-gray-700">&quot;Membangun bersama, menuju desa mandiri dan sejahtera.&quot;</p>
           </div>
       </div>
 
