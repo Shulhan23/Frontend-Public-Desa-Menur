@@ -119,48 +119,26 @@ export default function HomePage() {
       {/* PETA DESA */}
       <section className="px-4 pb-24" id="peta-desa">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 font-sans text-gray-800">Peta Interaktif Desa Menur</h2>
+          <h2 className="text-3xl font-bold mb-4 font-sans text-gray-800">Peta Interaktif Desa Menur</h2>
+          <p className="text-gray-600 font-serif mb-6">
+            Jelajahi wilayah desa secara interaktif. Untuk peta lainnya seperti tata guna lahan dan inklusi pupuk kimia, klik tombol di bawah ini.
+          </p>
+
           <div className="rounded-2xl overflow-hidden shadow-lg min-h-[300px] sm:min-h-[400px]">
             <PetaDesa />
           </div> 
-        </div>
-      </section>
 
-      {/* PETA TATA GUNA LAHAN & INKLUSI PUPUK */}
-      <section className="py-20 bg-white" id="pemetaan-desa">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 font-sans">
-            Peta Tata Guna Lahan & Inklusi Pupuk Kimia
-          </h2>
-
-          {/* PETA TATA GUNA LAHAN */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Peta Tata Guna Lahan</h3>
-            <img
-              src="/assets/peta/peta-tata-guna.jpg" // Ganti dengan path gambar kamu
-              alt="Peta Tata Guna Lahan Desa Menur"
-              className="w-full rounded-lg shadow-md object-contain"
-            />
-            <p className="text-gray-700 mt-4 font-serif text-justify">
-              Peta ini menggambarkan distribusi penggunaan lahan di Desa Menur, mencakup area pertanian, pemukiman, dan fasilitas umum berdasarkan wilayah RT/RW yang ada.
-            </p>
-          </div>
-
-          {/* PETA INKLUSI PUPUK KIMIA */}
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Peta Inklusi Pupuk Kimia</h3>
-            <img
-              src="/assets/peta/peta-inklusi-pupuk.jpg" // Ganti dengan path gambar kamu
-              alt="Peta Inklusi Pupuk Kimia Desa Menur"
-              className="w-full rounded-lg shadow-md object-contain"
-            />
-            <p className="text-gray-700 mt-4 font-serif text-justify">
-              Peta ini menunjukkan potensi pencemaran lingkungan akibat penggunaan pupuk kimia di wilayah pertanian dan perairan Desa Menur. Zona merah menunjukkan tingkat pencemaran tinggi, kuning sedang, dan hijau rendah.
-            </p>
+          {/* Tombol Lihat Peta Lainnya */}
+          <div className="mt-8">
+            <a
+              href="/peta"
+              className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-green-700 transition"
+            >
+              Lihat Peta Lebih Banyak
+            </a>
           </div>
         </div>
       </section>
-
 
     <section className="bg-gray-50 py-20" id="potensi-desa">
       <div className="max-w-6xl mx-auto px-4">
