@@ -125,62 +125,99 @@ export default function HomePage() {
           </div> 
         </div>
       </section>
-<section className="bg-gray-50 py-20" id="potensi-desa">
-  <div className="max-w-6xl mx-auto px-4">
-    {/* Header */}
-    <div className="flex items-center justify-between mb-12">
-      <div>
-        <h2 className="text-4xl font-bold text-black-600 font-sans mb-2">UMKM Desa</h2>
-        <p className="text-gray-700 font-serif max-w-xl">
-          Berbagai potensi usaha mikro dan kecil yang tumbuh di Desa Menur, mendukung ekonomi lokal dengan semangat gotong royong.
-        </p>
+
+      {/* PETA TATA GUNA LAHAN & INKLUSI PUPUK */}
+      <section className="py-20 bg-white" id="pemetaan-desa">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 font-sans">
+            Peta Tata Guna Lahan & Inklusi Pupuk Kimia
+          </h2>
+
+          {/* PETA TATA GUNA LAHAN */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Peta Tata Guna Lahan</h3>
+            <img
+              src="/assets/peta/peta-tata-guna.jpg" // Ganti dengan path gambar kamu
+              alt="Peta Tata Guna Lahan Desa Menur"
+              className="w-full rounded-lg shadow-md object-contain"
+            />
+            <p className="text-gray-700 mt-4 font-serif text-justify">
+              Peta ini menggambarkan distribusi penggunaan lahan di Desa Menur, mencakup area pertanian, pemukiman, dan fasilitas umum berdasarkan wilayah RT/RW yang ada.
+            </p>
+          </div>
+
+          {/* PETA INKLUSI PUPUK KIMIA */}
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">Peta Inklusi Pupuk Kimia</h3>
+            <img
+              src="/assets/peta/peta-inklusi-pupuk.jpg" // Ganti dengan path gambar kamu
+              alt="Peta Inklusi Pupuk Kimia Desa Menur"
+              className="w-full rounded-lg shadow-md object-contain"
+            />
+            <p className="text-gray-700 mt-4 font-serif text-justify">
+              Peta ini menunjukkan potensi pencemaran lingkungan akibat penggunaan pupuk kimia di wilayah pertanian dan perairan Desa Menur. Zona merah menunjukkan tingkat pencemaran tinggi, kuning sedang, dan hijau rendah.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+    <section className="bg-gray-50 py-20" id="potensi-desa">
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-12">
+          <div>
+            <h2 className="text-4xl font-bold text-black-600 font-sans mb-2">UMKM Desa</h2>
+            <p className="text-gray-700 font-serif max-w-xl">
+              Berbagai potensi usaha mikro dan kecil yang tumbuh di Desa Menur, mendukung ekonomi lokal dengan semangat gotong royong.
+            </p>
+          </div>
+        </div>
+
+        {/* Potensi Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Card 1 */}
+          <a href="/potensi/kuliner" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+            <img
+              src="/assets/potensi/pariwisata.jpg"
+              alt="Kuliner"
+              className="rounded-lg object-cover w-full h-48 mb-4"
+            />
+            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Kuliner</h3>
+          </a>
+
+          {/* Card 2 */}
+          <a href="/potensi/tempe" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+            <img
+              src="/assets/potensi/perikanan.jpg"
+              alt="Tempe"
+              className="rounded-lg object-cover w-full h-48 mb-4"
+            />
+            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Tempe</h3>
+          </a>
+
+          {/* Card 3 */}
+          <a href="/potensi/bengkel-spm" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+            <img
+              src="/assets/potensi/kerajinan.jpg"
+              alt="Kerajinan"
+              className="rounded-lg object-cover w-full h-48 mb-4"
+            />
+            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel SPM</h3>
+          </a>
+
+          {/* Card 4 */}
+          <a href="/potensi/bengkel-r4" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
+            <img
+              src="/assets/potensi/pakaian.jpg"
+              alt="Pakaian"
+              className="rounded-lg object-cover w-full h-48 mb-4"
+            />
+            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengekl R4</h3>
+          </a>
+        </div>
       </div>
-    </div>
-
-    {/* Potensi Cards */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-      {/* Card 1 */}
-      <a href="/potensi/kuliner" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-        <img
-          src="/assets/potensi/pariwisata.jpg"
-          alt="Kuliner"
-          className="rounded-lg object-cover w-full h-48 mb-4"
-        />
-        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Kuliner</h3>
-      </a>
-
-      {/* Card 2 */}
-      <a href="/potensi/tempe" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-        <img
-          src="/assets/potensi/perikanan.jpg"
-          alt="Tempe"
-          className="rounded-lg object-cover w-full h-48 mb-4"
-        />
-        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Tempe</h3>
-      </a>
-
-      {/* Card 3 */}
-      <a href="/potensi/bengkel-spm" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-        <img
-          src="/assets/potensi/kerajinan.jpg"
-          alt="Kerajinan"
-          className="rounded-lg object-cover w-full h-48 mb-4"
-        />
-        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel SPM</h3>
-      </a>
-
-      {/* Card 4 */}
-      <a href="/potensi/bengkel-r4" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-        <img
-          src="/assets/potensi/pakaian.jpg"
-          alt="Pakaian"
-          className="rounded-lg object-cover w-full h-48 mb-4"
-        />
-        <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengekl R4</h3>
-      </a>
-    </div>
-  </div>
-</section>
+    </section>
     </main>
   )
 }
