@@ -178,7 +178,7 @@ export default function HomePage() {
           <a href="/potensi/bengkel-spm" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
             <img
               src="/assets/potensi/kerajinan.jpg"
-              alt="Kerajinan"
+              alt="Bengkel"
               className="rounded-lg object-cover w-full h-48 mb-4"
             />
             <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel SPM</h3>
@@ -188,7 +188,7 @@ export default function HomePage() {
           <a href="/potensi/bengkel-r4" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
             <img
               src="/assets/potensi/pakaian.jpg"
-              alt="Pakaian"
+              alt="Bengkel"
               className="rounded-lg object-cover w-full h-48 mb-4"
             />
             <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel R4</h3>
