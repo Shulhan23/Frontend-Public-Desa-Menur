@@ -30,10 +30,10 @@ export default function Footer() {
         </div>
 
         {/* Kolom 3 - Nomor Penting */}
-        <div className="flex flex-col space-y-1">
-          <h4 className="text-yellow-300 font-bold text-xs">Pengurus Desa</h4>
-          <p className="text-xs">Ahmad Siswanto : Kades Menur:</p>
-        </div>
+          <div className="flex flex-col space-y-1">
+            <h4 className="text-purple-600 font-bold text-xs">Motto Desa</h4>
+            <p className="text-xs italic text-gray-700">"Membangun bersama, menuju desa mandiri dan sejahtera."</p>
+          </div>
       </div>
 
       <div className="text-center mt-4 pt-2 border-t border-white/30 text-xs max-w-5xl mx-auto px-4 sm:px-6 lg:px-4">
