@@ -191,7 +191,7 @@ export default function HomePage() {
               alt="Pakaian"
               className="rounded-lg object-cover w-full h-48 mb-4"
             />
-            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengekl R4</h3>
+            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel R4</h3>
           </a>
         </div>
       </div>

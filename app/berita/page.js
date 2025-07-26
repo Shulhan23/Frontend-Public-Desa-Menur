@@ -52,9 +52,6 @@ export default async function BeritaPage() {
               <p className="text-gray-500 text-sm mb-2">
                 {formatTanggal(berita.created_at)}
               </p>
-              <p className="text-gray-700 text-sm line-clamp-5">
-                {berita.isi}
-              </p>
             </div>
           </Link>
         ))}
