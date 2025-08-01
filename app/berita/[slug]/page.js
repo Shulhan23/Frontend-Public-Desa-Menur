@@ -71,7 +71,7 @@ export async function generateMetadata({ params }) {
           : [],
       },
     }
-  } catch (err) {
+  } catch {
     return {
       title: 'Kesalahan Server',
       description: 'Terjadi kesalahan saat memuat halaman.',
