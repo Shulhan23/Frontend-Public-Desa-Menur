@@ -1,48 +1,37 @@
 import Link from 'next/link'
 
-// Format tanggal Indonesia
-function formatTanggal(dateString) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(dateString).toLocaleDateString('id-ID', options)
+const formatTanggal = (date) =>
+  new Date(date).toLocaleDateString('id-ID', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.desamenur.com'
+
+const getGambar = (berita) => {
+  const gambarItem = berita?.konten?.find((item) => item.tipe === 'gambar')
+  return gambarItem?.konten
+    ? new URL(`/storage/${gambarItem.konten}`, BASE_URL).toString()
+    : null
 }
 
-// Base URL backend Laravel
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
-
-// Fungsi untuk mengambil gambar dari konten berita
-function getGambar(berita) {
-  if (!berita?.konten || !Array.isArray(berita.konten)) return null
-
-  const gambarKonten = berita.konten.find((k) => k.tipe === 'gambar')
-  if (!gambarKonten || !gambarKonten.konten) return null
-
-  try {
-    return new URL(`/storage/${gambarKonten.konten}`, BASE_URL).toString()
-  } catch (error) {
-    console.error('Gagal membuat URL gambar:', error)
-    return null
-  }
-}
-
-// Fungsi konversi tag HTML tidak semantik ke tag semantik
-function convertHtmlTags(html) {
-  return html
+const convertHtmlTags = (html) =>
+  html
     .replace(/<b>/g, '<strong>')
     .replace(/<\/b>/g, '</strong>')
     .replace(/<i>/g, '<em>')
     .replace(/<\/i>/g, '</em>')
-}
-
 
 export default async function BeritaPage() {
-  const res = await fetch(`${BASE_URL}/berita`, {
+  const res = await fetch(`${BASE_URL}/api/v1/berita`, {
     cache: 'no-store',
     headers: { Accept: 'application/json' },
   })
 
   if (!res.ok) {
-    const text = await res.text()
-    console.error('Respon error dari backend:', text)
+    const errorText = await res.text()
+    console.error('Gagal fetch data berita:', errorText)
     throw new Error('Gagal mengambil data berita')
   }
 
@@ -54,7 +43,7 @@ export default async function BeritaPage() {
         Berita Desa
       </h1>
 
-      <p className="text-gray-700 text-base mb-10 leading-relaxed text-justify">
+      <p className="text-gray-700 text-base mb-10 text-justify leading-relaxed">
         Temukan informasi terbaru seputar kegiatan, pengumuman resmi, dan perkembangan terkini di Desa Menur.
         Semua berita disampaikan langsung oleh Pemerintah Desa sebagai bentuk transparansi dan keterbukaan informasi bagi masyarakat.
       </p>
@@ -68,25 +57,20 @@ export default async function BeritaPage() {
             <Link
               href={`/berita/${berita.slug}`}
               key={berita.id}
-              className="relative bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+              className="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden"
             >
               {gambar && (
                 <img
                   src={gambar}
                   alt={berita.judul || 'Gambar Berita'}
-                  className="w-full max-h-64 object-cover object-center"
+                  className="w-full max-h-64 object-cover"
                 />
               )}
               <div className="p-5">
                 <h2 className="text-xl font-semibold text-blue-900 mb-1">{berita.judul}</h2>
                 <p className="text-gray-500 text-sm mb-2">{formatTanggal(berita.created_at)}</p>
                 <div
-                  className="text-gray-700 text-sm leading-relaxed text-justify overflow-hidden"
-                  style={{
-                    display: '-webkit-box',
-                    WebkitLineClamp: 5,
-                    WebkitBoxOrient: 'vertical',
-                  }}
+                  className="text-gray-700 text-sm leading-relaxed text-justify line-clamp-5"
                   dangerouslySetInnerHTML={{ __html: convertHtmlTags(teksPertama) }}
                 />
               </div>
