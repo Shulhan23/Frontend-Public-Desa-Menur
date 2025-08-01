@@ -25,14 +25,14 @@ export default function Footer() {
         {/* Kolom 2 - Kontak */}
         <div className="flex flex-col space-y-1">
           <h4 className="text-yellow-300 font-bold text-xs">Hubungi Kami</h4>
-          <p className="text-xs">📞 Phone/WA : 0822-5785-9091-</p>
+          <p className="text-xs">📞 Phone/WA : 0822-5785-9091</p>
           <p className="text-xs">Jam Kerja: Senin - Jumat, 08:00 - 16:00</p>
         </div>
 
-        {/* Kolom 3 - Nomor Penting */}
+        {/* Kolom 3*/}
           <div className="flex flex-col space-y-1">
-            <h4 className="text-purple-600 font-bold text-xs">Motto Desa</h4>
-            <p className="text-xs italic text-gray-700">&quot;Membangun bersama, menuju desa mandiri dan sejahtera.&quot;</p>
+            <h4 className="text-yellow-300 font-bold text-xs">Motto Desa</h4>
+            <p className="text-xs">&quot;Membangun bersama, menuju desa mandiri dan sejahtera.&quot;</p>
           </div>
       </div>
 
