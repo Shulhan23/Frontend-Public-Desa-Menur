@@ -1,15 +1,17 @@
 import { notFound } from "next/navigation";
 
 export default async function UMKMByJenisPage({ params }) {
-  // params harus digunakan setelah function dijalankan secara async
   const slug = params?.slug;
 
   if (!slug || typeof slug !== "string") {
-    notFound(); // Akan menampilkan halaman 404
+    notFound();
   }
 
+  // Use fallback for API URL
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.desamenur.com";
+
   try {
-    const jenisRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/jenis-umkm`, {
+    const jenisRes = await fetch(`${API_URL}/api/v1/jenis-umkm`, {
       cache: "no-store",
       headers: {
         Accept: "application/json",
@@ -26,12 +28,12 @@ export default async function UMKMByJenisPage({ params }) {
       : null;
 
     if (!jenis) {
-      notFound(); // Jenis UMKM tidak ditemukan, tampilkan 404
+      notFound();
     }
 
     const jenisId = jenis.id;
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/umkm?jenis=${jenisId}`, {
+    const res = await fetch(`${API_URL}/api/v1/umkm?jenis=${jenisId}`, {
       cache: "no-store",
       headers: {
         Accept: "application/json",
@@ -73,10 +75,10 @@ export default async function UMKMByJenisPage({ params }) {
       </section>
     );
   } catch (error) {
-return (
-    <div className="text-red-500 p-8 text-center">
-      Terjadi kesalahan: {error instanceof Error ? error.message : "Unknown error"}
-    </div>
-);
+    return (
+      <div className="text-red-500 p-8 text-center">
+        Terjadi kesalahan: {error instanceof Error ? error.message : "Unknown error"}
+      </div>
+    );
   }
 }
