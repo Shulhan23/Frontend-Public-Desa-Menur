@@ -11,7 +11,7 @@ export default async function UMKMByJenisPage({ params }) {
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   try {
-    const jenisRes = await fetch(`${API_URL}/api/v1/jenis-umkm`, {
+    const jenisRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/jenis-umkm`, {
       cache: "no-store",
       headers: {
         Accept: "application/json",
@@ -33,7 +33,7 @@ export default async function UMKMByJenisPage({ params }) {
 
     const jenisId = jenis.id;
 
-    const res = await fetch(`${API_URL}/api/v1/umkm?jenis=${jenisId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/umkm?jenis=${jenisId}`, {
       cache: "no-store",
       headers: {
         Accept: "application/json",
