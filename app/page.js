@@ -1,5 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Newspaper, MapPinned, Users2 } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -7,6 +8,33 @@ import { motion } from 'framer-motion'
 const PetaDesa = dynamic(() => import('@/components/public/PetaDesa'), { ssr: false })
 
 export default function HomePage() {
+
+    const [jenisList, setJenisList] = useState([])
+    const fetchJenis = async () => {
+      try {
+        const res = await fetch('/laravel-api/api/v1/jenis-umkm', {
+          headers: {
+            Accept: 'application/json',
+          },
+          credentials: 'omit', // <- ini penting jika endpoint tidak butuh cookie auth
+        })
+
+        if (!res.ok) throw new Error('Gagal fetch data jenis')
+
+        const data = await res.json()
+        console.log('Data jenis dari API:', data)
+        setJenisList(data)
+      } catch (err) {
+        console.error('Gagal mengambil jenis UMKM:', err)
+      }
+    }
+    useEffect(() => {
+      fetchJenis()
+    }, [])
+
+    console.log('Isi jenisList:', jenisList)
+
+
   return (
     <main>
       {/* HERO SECTION */}
@@ -153,46 +181,23 @@ export default function HomePage() {
         </div>
 
         {/* Potensi Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Card 1 */}
-          <a href="/potensi/kuliner" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-            <img
-              src="/assets/potensi/pariwisata.jpg"
-              alt="Kuliner"
-              className="rounded-lg object-cover w-full h-48 mb-4"
-            />
-            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Kuliner</h3>
-          </a>
-
-          {/* Card 2 */}
-          <a href="/potensi/tempe" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-            <img
-              src="/assets/potensi/perikanan.jpg"
-              alt="Tempe"
-              className="rounded-lg object-cover w-full h-48 mb-4"
-            />
-            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Tempe</h3>
-          </a>
-
-          {/* Card 3 */}
-          <a href="/potensi/bengkel-spm" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-            <img
-              src="/assets/potensi/kerajinan.jpg"
-              alt="Bengkel"
-              className="rounded-lg object-cover w-full h-48 mb-4"
-            />
-            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel SPM</h3>
-          </a>
-
-          {/* Card 4 */}
-          <a href="/potensi/bengkel-r4" className="block rounded-lg shadow-md hover:shadow-lg transition p-4 bg-white">
-            <img
-              src="/assets/potensi/pakaian.jpg"
-              alt="Bengkel"
-              className="rounded-lg object-cover w-full h-48 mb-4"
-            />
-            <h3 className="text-lg font-bold text-center text-gray-800">Usaha Bengkel R4</h3>
-          </a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+          {jenisList.map((jenis) => (
+            <motion.div
+              key={jenis.id}
+              className="bg-white shadow-md rounded-2xl p-4"
+              whileHover={{ scale: 1.03 }}
+            >
+              <h2 className="text-xl font-semibold mb-2">{jenis.nama_jenis}</h2>
+              
+              <Link
+                href={`/potensi/jenis/${jenis.slug}`}
+                className="inline-block mt-2 text-blue-600 hover:underline"
+              >
+                Lihat UMKM
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
       </section>
