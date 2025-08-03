@@ -1,28 +1,28 @@
+import type { NextConfig } from "next";
+import dotenv from "dotenv";
+
+dotenv.config(); // Pastikan ini dipanggil sebelum config dijalankan
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+if (!API_URL) {
+  throw new Error("❌ NEXT_PUBLIC_API_URL is not defined in .env");
+}
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   async rewrites() {
-    const API_URL =
-      process.env.NEXT_PUBLIC_API_URL || "https://api.desamenur.com";
-
-    // Log a warning if the environment variable is not set
-    if (!process.env.NEXT_PUBLIC_API_URL) {
-      console.warn(
-        "⚠️ Warning: NEXT_PUBLIC_API_URL is not defined. Using fallback URL:",
-        API_URL
-      );
-    }
-
     return [
       {
         source: "/laravel-api/:path*",
-        destination: `${API_URL}/:path*`, // Dynamic API URL
+        destination: `${API_URL}/:path*`,
       },
       {
         source: "/storage/:path*",
-        destination: `${API_URL}/storage/:path*`, // For storage routes (e.g., images)
+        destination: `${API_URL}/storage/:path*`,
       },
     ];
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
