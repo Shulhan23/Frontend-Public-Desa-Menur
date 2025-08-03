@@ -8,8 +8,6 @@ export default async function UMKMByJenisPage({ params }) {
     notFound(); // Akan menampilkan halaman 404
   }
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
-
   try {
     const jenisRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/jenis-umkm`, {
       cache: "no-store",
