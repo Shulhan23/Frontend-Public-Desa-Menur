@@ -1,14 +1,19 @@
 import type { NextConfig } from "next";
 
-// Jangan pakai dotenv di Vercel production, hanya berguna di development
+// Gunakan dotenv hanya saat development lokal
 if (process.env.NODE_ENV === "development") {
   require("dotenv").config();
 }
 
+// Gunakan nilai fallback jika ENV tidak didefinisikan
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.desamenur.com";
 
+// Jangan throw, cukup beri warning di development
 if (!process.env.NEXT_PUBLIC_API_URL && process.env.NODE_ENV !== "production") {
-  console.warn("⚠️ NEXT_PUBLIC_API_URL not defined. Using fallback:", API_URL);
+  console.warn(
+    "⚠️ NEXT_PUBLIC_API_URL is not defined. Using fallback:",
+    API_URL
+  );
 }
 
 /** @type {import('next').NextConfig} */
