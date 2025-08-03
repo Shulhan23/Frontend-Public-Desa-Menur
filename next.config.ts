@@ -1,13 +1,14 @@
-/** @type {import('next').NextConfig} */
+require("dotenv").config(); // Di paling atas
+
 const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/laravel-api/:path*',
-        destination: 'http://localhost:8000/:path*', // HTTPS ✅
+        source: "/laravel-api/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API_BASE_URL}/:path*`,
       },
-    ]
+    ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

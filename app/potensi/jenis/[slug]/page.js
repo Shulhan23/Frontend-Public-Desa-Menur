@@ -5,8 +5,9 @@ export default async function UMKMByJenisPage({ params }) {
     return <div>Error: slug tidak tersedia</div>;
   }
 
-  // Pertama ambil ID berdasarkan slug dari endpoint jenis UMKM
-  const jenisRes = await fetch(`http://localhost:8000/api/v1/jenis-umkm`, {
+  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+  const jenisRes = await fetch(`${BASE_URL}/jenis-umkm`, {
     cache: 'no-store',
     headers: {
       Accept: 'application/json',
@@ -28,8 +29,7 @@ export default async function UMKMByJenisPage({ params }) {
 
   const jenisId = jenis.id;
 
-  // Kemudian ambil UMKM berdasarkan jenis ID
-  const res = await fetch(`http://localhost:8000/api/v1/umkm?jenis=${jenisId}`, {
+  const res = await fetch(`${BASE_URL}/umkm?jenis=${jenisId}`, {
     cache: 'no-store',
     headers: {
       Accept: 'application/json',
@@ -39,7 +39,6 @@ export default async function UMKMByJenisPage({ params }) {
   if (!res.ok) {
     return <div>Gagal mengambil data UMKM</div>;
   }
-  
 
   const data = await res.json();
   const umkmList = data.data;
