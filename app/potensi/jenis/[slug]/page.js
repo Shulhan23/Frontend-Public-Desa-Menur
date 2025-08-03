@@ -5,9 +5,8 @@ export default async function UMKMByJenisPage({ params }) {
     return <div>Error: slug tidak tersedia</div>;
   }
 
-  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-  const jenisRes = await fetch(`${BASE_URL}/jenis-umkm`, {
+  // Fetch data jenis UMKM
+  const jenisRes = await fetch(`/laravel-api/api/v1/jenis-umkm`, {
     cache: 'no-store',
     headers: {
       Accept: 'application/json',
@@ -29,7 +28,8 @@ export default async function UMKMByJenisPage({ params }) {
 
   const jenisId = jenis.id;
 
-  const res = await fetch(`${BASE_URL}/umkm?jenis=${jenisId}`, {
+  // Fetch data UMKM berdasarkan jenis
+  const res = await fetch(`/laravel-api/api/v1/umkm?jenis=${jenisId}`, {
     cache: 'no-store',
     headers: {
       Accept: 'application/json',
