@@ -78,7 +78,7 @@ export default async function BeritaDetail({ params }) {
         />
       )}
 
-      <article className="prose prose-lg prose-slate max-w-none">
+      <article className="prose prose-base prose-slate max-w-none [&>p]:mb-2">
         {berita.konten?.map((item, i) =>
           item.tipe === 'gambar' ? (
             <figure key={i} className="mb-8">
