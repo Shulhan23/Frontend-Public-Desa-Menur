@@ -89,7 +89,7 @@ export default async function BeritaDetail({ params }) {
               />
             </figure>
           ) : item.tipe === 'teks' ? (
-            <p
+            <div
               key={i}
               className="mb-6 whitespace-pre-line text-justify"
               dangerouslySetInnerHTML={{ __html: renderFormattedText(item.konten) }}
