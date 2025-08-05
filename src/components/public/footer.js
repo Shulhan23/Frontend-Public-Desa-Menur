@@ -27,6 +27,23 @@ export default function Footer() {
           <h4 className="text-yellow-300 font-bold text-xs">Hubungi Kami</h4>
           <p className="text-xs">📞 Phone/WA : 0822-5785-9091</p>
           <p className="text-xs">Jam Kerja: Senin - Jumat, 08:00 - 16:00</p>
+
+          <a
+            href="https://youtube.com/@desamenurmranggendemak?si=AGwNAyyLRhbizMhx" // Ganti dengan link channel YouTube desa kamu
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-400 hover:underline flex items-center space-x-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4 text-red-500"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M23.498 6.186a2.996 2.996 0 0 0-2.111-2.12C19.712 3.5 12 3.5 12 3.5s-7.713 0-9.388.566A2.996 2.996 0 0 0 .501 6.186 31.333 31.333 0 0 0 0 12a31.333 31.333 0 0 0 .501 5.814 2.996 2.996 0 0 0 2.111 2.12C4.287 20.5 12 20.5 12 20.5s7.713 0 9.388-.566a2.996 2.996 0 0 0 2.111-2.12A31.333 31.333 0 0 0 24 12a31.333 31.333 0 0 0-.502-5.814zM9.75 15.02V8.98l6.5 3.02-6.5 3.02z" />
+            </svg>
+            <span>Kunjungi YouTube Desa</span>
+          </a>
         </div>
 
         {/* Kolom 3*/}
