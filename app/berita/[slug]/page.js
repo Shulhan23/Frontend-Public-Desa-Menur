@@ -78,7 +78,7 @@ export default async function BeritaDetail({ params }) {
         />
       )}
 
-      <article className="prose prose-base prose-slate max-w-none [&>p]:mb-2">
+      <article className="prose prose-base prose-slate text-justify max-w-none [&>p]:mb-2">
         {berita.konten?.map((item, i) =>
           item.tipe === 'gambar' ? (
             <figure key={i} className="mb-8">
@@ -91,7 +91,7 @@ export default async function BeritaDetail({ params }) {
           ) : item.tipe === 'teks' ? (
             <div
               key={i}
-              className="mb-6 text-justify"
+              className="mb-6 "
               dangerouslySetInnerHTML={{ __html: renderFormattedText(item.konten) }}
             />
           ) : null
